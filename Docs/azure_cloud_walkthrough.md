@@ -6,7 +6,7 @@ All resources were set up using **Azure credits**, enabling a production-like en
 ---
 
 ## 1. Azure Data Lake Storage (ADLS) – Staging Area
-![ADLS Staging](/img/azure/01_adls_staging.png)  
+![ADLS Staging](img/Azure/01_adls_staging.png)  
 
 The raw **LendingClub 2018Q4 dataset** was uploaded to **Azure Data Lake Storage Gen2** in the container `stagingadls`.
 
@@ -18,7 +18,7 @@ The raw **LendingClub 2018Q4 dataset** was uploaded to **Azure Data Lake Storage
 ---
 
 ## 2. Azure Databricks – Mounting ADLS
-![Databricks Mount](/img/azure/02_databricks_mount.png)  
+![Databricks Mount](img/Azure/02_databricks_mount.png)  
 
 Using **Azure Databricks**, the ADLS container (`stagingblob`) was mounted into the Databricks File System (DBFS).  
 This allowed PySpark to directly access raw CSV files stored in ADLS without manual download/upload steps.
@@ -31,7 +31,7 @@ This allowed PySpark to directly access raw CSV files stored in ADLS without man
 ---
 
 ## 3. Writing Processed Data to Azure SQL Database
-![Write to SQL](/img/azure/03_write_to_sql.png)  
+![Write to SQL](img/Azure/03_write_to_sql.png)  
 
 Once cleaned and transformed in Databricks, the dataset was written to **Azure SQL Database** via the Spark JDBC connector.
 
@@ -49,7 +49,7 @@ Once cleaned and transformed in Databricks, the dataset was written to **Azure S
 ---
 
 ## 4. Querying Final Data in Azure SQL Database
-![SQL Query Results](/img/azure/04_sql_query_results.png)  
+![SQL Query Results](img/Azure/04_sql_query_results.png)  
 
 After loading, the processed `loan_data` table was queried in **Azure SQL Database Query Editor** to verify successful ingestion.
 
